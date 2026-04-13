@@ -1,0 +1,3 @@
+[submodule "pmesdr"]
+	path = pmesdr
+	url = git@github.com:katedeviley/pmesdr
