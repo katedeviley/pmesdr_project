@@ -15,6 +15,7 @@
 #     source ./config.sh
 #
 # =============================================================================
+source ../my_config.sh
 
 # ============================= CONDA ENVIRONMENT =============================
 export CONDA_ENV="pmesdrEnv"
@@ -52,14 +53,14 @@ export MEAS_META_SIR="${PMESDR_TOP_DIR}/src/prod/meas_meta_sir/meas_meta_sir"
 # =============================== DATA SOURCES ================================
 # NASA PPS:
 export PPS_URL="ftp://jsimpsonftps.pps.eosdis.nasa.gov/data/1C/AMSR2/"
-export PPS_USERNAME="katedeviley@gmail.com"
+export PPS_USERNAME="${MY_PPS_USERNAME}" # change to your username
 
 # JAXA G-Portal:
-export GPORTAL_USERNAME="katedeviley"
-export PRIVATE_KEY_PATH="${HOME}/.ssh/id_gportal"
+export GPORTAL_USERNAME="${MY_GPORTAL_USERNAME}"  # change to your username
+export PRIVATE_KEY_PATH="${MY_PRIVATE_KEY_PATH}"  # change to your path
 
 # ============================== REFERENCE FILES ==============================
 export REF_DIR="${BASE_DIR}/script/ref"
 
 # ============================= OUTPUT DIRECTORY ==============================
-export FINAL_OUTPUT_DIR="/data/kdeviley"
+export FINAL_OUTPUT_DIR="${FINAL_OUTPUT_DIR}" # change to your final output dir

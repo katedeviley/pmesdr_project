@@ -117,3 +117,5 @@ In ./envs/pmesdrEnv/lib/python3.1/site-packages/gsx/cli.py
 In miniconda3/envs/pmesdrEnv/lib/python3.12/site-packages/gsx/strategies
    In __init__.py, add new source type import 
 from .amsr3 import AMSR3_TS # noqa
+
+In /miniconda3/envs/pmesdrEnv/lib/python3.1/site-packages/gsx/strategies/transformer_strategy.py
