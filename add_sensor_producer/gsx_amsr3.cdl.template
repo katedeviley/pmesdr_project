@@ -1,0 +1,394 @@
+netcdf GSX {
+
+dimensions:
+
+    scans_loc1 = $scans_loc1 ;
+    scans_loc2 = $scans_loc2 ;
+    scans_loc3 = $scans_loc3 ;
+    measurements_loc1 = $measurements_loc1 ;
+    measurements_loc2 = $measurements_loc2 ;
+    measurements_loc3 = $measurements_loc3 ;
+    ellipse_dimensions = 2 ;
+
+variables:
+
+    int orbit ;
+        orbit:long_name = "Integer Orbit Number" ;
+        orbit:valid_range = 1, 100000 ;
+        orbit:_FillValue = -9999. ;
+
+    double scan_time_loc1(scans_loc1) ;
+        scan_time_loc1:standard_name = "time" ;
+        scan_time_loc1:long_name = "Scan start time (UTC) for location 1 scans in a referenced or elapsed time format" ;
+        scan_time_loc1:units = "seconds since 1987-01-01 00:00:00" ;
+        scan_time_loc1:valid_range = -1000000000., 1000000000. ;
+        scan_time_loc1:_FillValue = -1.e+30 ;
+
+    double scan_time_loc2(scans_loc2) ;
+        scan_time_loc2:standard_name = "time" ;
+        scan_time_loc2:long_name = "Scan start time (UTC) for location 2 scans in a referenced or elapsed time format" ;
+        scan_time_loc2:units = "seconds since 1987-01-01 00:00:00" ;
+        scan_time_loc2:valid_range = -1000000000., 1000000000. ;
+        scan_time_loc2:_FillValue = -1.e+30 ;
+
+    double scan_time_loc3(scans_loc3) ;
+        scan_time_loc3:standard_name = "time" ;
+        scan_time_loc3:long_name = "Scan start time (UTC) for location 3 scans in a referenced or elapsed time format" ;
+        scan_time_loc3:units = "seconds since 1987-01-01 00:00:00" ;
+        scan_time_loc3:valid_range = -1000000000., 1000000000. ;
+        scan_time_loc3:_FillValue = -1.e+30 ;
+
+    float latitude_loc1(scans_loc1, measurements_loc1) ;
+        latitude_loc1:standard_name = "latitude" ;
+        latitude_loc1:long_name = "Geodetic latitude for location 1 channels" ;
+        latitude_loc1:units = "degrees_north" ;
+        latitude_loc1:valid_range = -90.0f, 90.0f ;
+        latitude_loc1:_FillValue = -9999.f ;
+
+    float latitude_loc2(scans_loc2, measurements_loc2) ;
+        latitude_loc2:standard_name = "latitude" ;
+        latitude_loc2:long_name = "Geodetic latitude for location 2 channels" ;
+        latitude_loc2:units = "degrees_north" ;
+        latitude_loc2:valid_range = -90.0f, 90.0f ;
+        latitude_loc2:_FillValue = -9999.f ;
+
+    float latitude_loc3(scans_loc3, measurements_loc3) ;
+        latitude_loc3:standard_name = "latitude" ;
+        latitude_loc3:long_name = "Geodetic latitude for location 3 channels" ;
+        latitude_loc3:units = "degrees_north" ;
+        latitude_loc3:valid_range = -90.0f, 90.0f ;
+        latitude_loc3:_FillValue = -9999.f ;
+
+    float longitude_loc1(scans_loc1, measurements_loc1) ;
+        longitude_loc1:standard_name = "longitude" ;
+        longitude_loc1:long_name = "Geodetic longitude for location 1 channels" ;
+        longitude_loc1:units = "degrees_east" ;
+        longitude_loc1:valid_range = -180.0f, 180.0f ;
+        longitude_loc1:_FillValue = -9999.f ;
+
+    float longitude_loc2(scans_loc2, measurements_loc2) ;
+        longitude_loc2:standard_name = "longitude" ;
+        longitude_loc2:long_name = "Geodetic longitude for location 2 channels" ;
+        longitude_loc2:units = "degrees_east" ;
+        longitude_loc2:valid_range = -180.0f, 180.0f ;
+        longitude_loc2:_FillValue = -9999.f ;
+
+    float longitude_loc3(scans_loc3, measurements_loc3) ;
+        longitude_loc3:standard_name = "longitude" ;
+        longitude_loc3:long_name = "Geodetic longitude for location 3 channels" ;
+        longitude_loc3:units = "degrees_east" ;
+        longitude_loc3:valid_range = -180.0f, 180.0f ;
+        longitude_loc3:_FillValue = -9999.f ;
+
+    float spacecraft_latitude_loc1(scans_loc1) ;
+        spacecraft_latitude_loc1:long_name = "Spacecraft Latitude" ;
+        spacecraft_latitude_loc1:units = "degrees_north" ;
+        spacecraft_latitude_loc1:valid_range = -90.f, 90.f ;
+        spacecraft_latitude_loc1:_FillValue = -9999.f ;
+
+    float spacecraft_longitude_loc1(scans_loc1) ;
+        spacecraft_longitude_loc1:long_name = "Spacecraft Longitude" ;
+        spacecraft_longitude_loc1:units = "degrees_east" ;
+        spacecraft_longitude_loc1:valid_range = -180.f, 180.f ;
+        spacecraft_longitude_loc1:_FillValue = -9999.f ;
+
+    float spacecraft_latitude_loc2(scans_loc1) ;
+        spacecraft_latitude_loc2:long_name = "Spacecraft Latitude" ;
+        spacecraft_latitude_loc2:units = "degrees_north" ;
+        spacecraft_latitude_loc2:valid_range = -90.f, 90.f ;
+        spacecraft_latitude_loc2:_FillValue = -9999.f ;
+
+    float spacecraft_longitude_loc2(scans_loc1) ;
+        spacecraft_longitude_loc2:long_name = "Spacecraft Longitude" ;
+        spacecraft_longitude_loc2:units = "degrees_east" ;
+        spacecraft_longitude_loc2:valid_range = -180.f, 180.f ;
+        spacecraft_longitude_loc2:_FillValue = -9999.f ;
+
+    float spacecraft_latitude_loc3(scans_loc1) ;
+        spacecraft_latitude_loc3:long_name = "Spacecraft Latitude" ;
+        spacecraft_latitude_loc3:units = "degrees_north" ;
+        spacecraft_latitude_loc3:valid_range = -90.f, 90.f ;
+        spacecraft_latitude_loc3:_FillValue = -9999.f ;
+
+    float spacecraft_longitude_loc3(scans_loc1) ;
+        spacecraft_longitude_loc3:long_name = "Spacecraft Longitude" ;
+        spacecraft_longitude_loc3:units = "degrees_east" ;
+        spacecraft_longitude_loc3:valid_range = -180.f, 180.f ;
+        spacecraft_longitude_loc3:_FillValue = -9999.f ;
+
+    float earth_incidence_angle_loc1(scans_loc1, measurements_loc1) ;
+        earth_incidence_angle_loc1:long_name = "Earth incidence angle for location 1 channels" ;
+        earth_incidence_angle_loc1:units = "degrees" ;
+        earth_incidence_angle_loc1:valid_range = 50.0f, 58.0f ;
+        earth_incidence_angle_loc1:_FillValue = -9999.0f ;
+        earth_incidence_angle_loc1:coordinates = "longitude_loc1 latitude_loc1" ;
+
+    float earth_incidence_angle_loc2(scans_loc2, measurements_loc2) ;
+        earth_incidence_angle_loc2:long_name = "Earth incidence angle for location 2 channels" ;
+        earth_incidence_angle_loc2:units = "degrees" ;
+        earth_incidence_angle_loc2:valid_range = 50.0f, 58.0f ;
+        earth_incidence_angle_loc2:_FillValue = -9999.0f ;
+        earth_incidence_angle_loc2:coordinates = "longitude_loc2 latitude_loc2" ;
+
+    float earth_incidence_angle_loc3(scans_loc3, measurements_loc3) ;
+        earth_incidence_angle_loc3:long_name = "Earth incidence angle for location 3 channels" ;
+        earth_incidence_angle_loc3:units = "degrees" ;
+        earth_incidence_angle_loc3:valid_range = 50.0f, 58.0f ;
+        earth_incidence_angle_loc3:_FillValue = -9999.0f ;
+        earth_incidence_angle_loc3:coordinates = "longitude_loc3 latitude_loc3" ;
+
+    float earth_azimuth_angle_loc1(scans_loc1, measurements_loc1) ;
+        earth_azimuth_angle_loc1:long_name = "Earth azimuth angle  (clockwise from North) for location 1 channels" ;
+        earth_azimuth_angle_loc1:units = "degrees" ;
+        earth_azimuth_angle_loc1:valid_range = -180.0f, 180.0f ;
+        earth_azimuth_angle_loc1:_FillValue = -9999.0f ;
+        earth_azimuth_angle_loc1:coordinates = "longitude_loc1 latitude_loc1" ;
+
+    float earth_azimuth_angle_loc2(scans_loc2, measurements_loc2) ;
+        earth_azimuth_angle_loc2:long_name = "Earth azimuth angle  (clockwise from North) for location 2 channels" ;
+        earth_azimuth_angle_loc2:units = "degrees" ;
+        earth_azimuth_angle_loc2:valid_range = -180.0f, 180.0f ;
+        earth_azimuth_angle_loc2:_FillValue = -9999.0f ;
+        earth_azimuth_angle_loc2:coordinates = "longitude_loc2 latitude_loc2" ;
+
+    float earth_azimuth_angle_loc3(scans_loc3, measurements_loc3) ;
+        earth_azimuth_angle_loc3:long_name = "Earth azimuth angle  (clockwise from North) for location 3 channels" ;
+        earth_azimuth_angle_loc3:units = "degrees" ;
+        earth_azimuth_angle_loc3:valid_range = -180.0f, 180.0f ;
+        earth_azimuth_angle_loc3:_FillValue = -9999.0f ;
+        earth_azimuth_angle_loc3:coordinates = "longitude_loc3 latitude_loc3" ;
+
+    float brightness_temperature_6.9H(scans_loc1, measurements_loc1) ;
+        brightness_temperature_6.9H:standard_name = "brightness_temperature" ;
+        brightness_temperature_6.9H:long_name = "$tb_fcdr_prefix FCDR of 6.9 GHz horizontally polarized brightness temperature" ;
+        brightness_temperature_6.9H:units = "kelvin" ;
+        brightness_temperature_6.9H:valid_range = 50.f, 350.f ;
+        brightness_temperature_6.9H:_FillValue = -100.f ;
+        brightness_temperature_6.9H:coordinates = "longitude_loc1 latitude_loc1" ;
+        brightness_temperature_6.9H:gsx_field_of_view = "efov_6.9H" ;
+        brightness_temperature_6.9H:gsx_azimuth_angle = "earth_azimuth_angle_loc1" ;
+        brightness_temperature_6.9H:gsx_incidence_angle = "earth_incidence_angle_loc1" ;
+
+    float brightness_temperature_6.9V(scans_loc1, measurements_loc1) ;
+        brightness_temperature_6.9V:standard_name = "brightness_temperature" ;
+        brightness_temperature_6.9V:long_name = "$tb_fcdr_prefix FCDR of 6.9 GHz vertically polarized brightness temperature" ;
+        brightness_temperature_6.9V:units = "kelvin" ;
+        brightness_temperature_6.9V:valid_range = 50.f, 350.f ;
+        brightness_temperature_6.9V:_FillValue = -100.f ;
+        brightness_temperature_6.9V:coordinates = "longitude_loc1 latitude_loc1" ;
+        brightness_temperature_6.9V:gsx_field_of_view = "efov_6.9V" ;
+        brightness_temperature_6.9V:gsx_azimuth_angle = "earth_azimuth_angle_loc1" ;
+        brightness_temperature_6.9V:gsx_incidence_angle = "earth_incidence_angle_loc1" ;
+
+    float brightness_temperature_10.7H(scans_loc1, measurements_loc1) ;
+        brightness_temperature_10.7H:standard_name = "brightness_temperature" ;
+        brightness_temperature_10.7H:long_name = "$tb_fcdr_prefix FCDR of 10.65 GHz horizontally polarized brightness temperature" ;
+        brightness_temperature_10.7H:units = "kelvin" ;
+        brightness_temperature_10.7H:valid_range = 50.f, 350.f ;
+        brightness_temperature_10.7H:_FillValue = -100.f ;
+        brightness_temperature_10.7H:coordinates = "longitude_loc1 latitude_loc1" ;
+        brightness_temperature_10.7H:gsx_field_of_view = "efov_10.7H" ;
+        brightness_temperature_10.7H:gsx_azimuth_angle = "earth_azimuth_angle_loc1" ;
+        brightness_temperature_10.7H:gsx_incidence_angle = "earth_incidence_angle_loc1" ;
+
+    float brightness_temperature_10.7V(scans_loc1, measurements_loc1) ;
+        brightness_temperature_10.7V:standard_name = "brightness_temperature" ;
+        brightness_temperature_10.7V:long_name = "$tb_fcdr_prefix FCDR of 10.65 GHz vertically polarized brightness temperature" ;
+        brightness_temperature_10.7V:units = "kelvin" ;
+        brightness_temperature_10.7V:valid_range = 50.f, 350.f ;
+        brightness_temperature_10.7V:_FillValue = -100.f ;
+        brightness_temperature_10.7V:coordinates = "longitude_loc1 latitude_loc1" ;
+        brightness_temperature_10.7V:gsx_field_of_view = "efov_10.7V" ;
+        brightness_temperature_10.7V:gsx_azimuth_angle = "earth_azimuth_angle_loc1" ;
+        brightness_temperature_10.7V:gsx_incidence_angle = "earth_incidence_angle_loc1" ;
+
+    float brightness_temperature_18H(scans_loc1, measurements_loc1) ;
+        brightness_temperature_18H:standard_name = "brightness_temperature" ;
+        brightness_temperature_18H:long_name = "$tb_fcdr_prefix FCDR of 18.7 GHz horizontally polarized brightness temperature" ;
+        brightness_temperature_18H:units = "kelvin" ;
+        brightness_temperature_18H:valid_range = 50.f, 350.f ;
+        brightness_temperature_18H:_FillValue = -100.f ;
+        brightness_temperature_18H:coordinates = "longitude_loc1 latitude_loc1" ;
+        brightness_temperature_18H:gsx_field_of_view = "efov_18H" ;
+        brightness_temperature_18H:gsx_azimuth_angle = "earth_azimuth_angle_loc1" ;
+        brightness_temperature_18H:gsx_incidence_angle = "earth_incidence_angle_loc1" ;
+
+    float brightness_temperature_18V(scans_loc1, measurements_loc1) ;
+        brightness_temperature_18V:standard_name = "brightness_temperature" ;
+        brightness_temperature_18V:long_name = "$tb_fcdr_prefix FCDR of 18.7 GHz vertically polarized brightness temperature" ;
+        brightness_temperature_18V:units = "kelvin" ;
+        brightness_temperature_18V:valid_range = 50.f, 350.f ;
+        brightness_temperature_18V:_FillValue = -100.f ;
+        brightness_temperature_18V:coordinates = "longitude_loc1 latitude_loc1" ;
+        brightness_temperature_18V:gsx_field_of_view = "efov_18V" ;
+        brightness_temperature_18V:gsx_azimuth_angle = "earth_azimuth_angle_loc1" ;
+        brightness_temperature_18V:gsx_incidence_angle = "earth_incidence_angle_loc1" ;
+
+    float brightness_temperature_23H(scans_loc1, measurements_loc1) ;
+        brightness_temperature_23H:standard_name = "brightness_temperature" ;
+        brightness_temperature_23H:long_name = "$tb_fcdr_prefix FCDR of 23.8 GHz horizontally polarized brightness temperature" ;
+        brightness_temperature_23H:units = "kelvin" ;
+        brightness_temperature_23H:valid_range = 50.f, 350.f ;
+        brightness_temperature_23H:_FillValue = -100.f ;
+        brightness_temperature_23H:coordinates = "longitude_loc1 latitude_loc1" ;
+        brightness_temperature_23H:gsx_field_of_view = "efov_23H" ;
+        brightness_temperature_23H:gsx_azimuth_angle = "earth_azimuth_angle_loc1" ;
+        brightness_temperature_23H:gsx_incidence_angle = "earth_incidence_angle_loc1" ;
+
+    float brightness_temperature_23V(scans_loc1, measurements_loc1) ;
+        brightness_temperature_23V:standard_name = "brightness_temperature" ;
+        brightness_temperature_23V:long_name = "$tb_fcdr_prefix FCDR of 23.8 GHz vertically polarized brightness temperature" ;
+        brightness_temperature_23V:units = "kelvin" ;
+        brightness_temperature_23V:valid_range = 50.f, 350.f ;
+        brightness_temperature_23V:_FillValue = -100.f ;
+        brightness_temperature_23V:coordinates = "longitude_loc1 latitude_loc1" ;
+        brightness_temperature_23V:gsx_field_of_view = "efov_23V" ;
+        brightness_temperature_23V:gsx_azimuth_angle = "earth_azimuth_angle_loc1" ;
+        brightness_temperature_23V:gsx_incidence_angle = "earth_incidence_angle_loc1" ;
+
+    float brightness_temperature_37H(scans_loc1, measurements_loc1) ;
+        brightness_temperature_37H:standard_name = "brightness_temperature" ;
+        brightness_temperature_37H:long_name = "$tb_fcdr_prefix FCDR of 36.5 GHz horizontally polarized brightness temperature" ;
+        brightness_temperature_37H:units = "kelvin" ;
+        brightness_temperature_37H:valid_range = 50.f, 350.f ;
+        brightness_temperature_37H:_FillValue = -100.f ;
+        brightness_temperature_37H:coordinates = "longitude_loc1 latitude_loc1" ;
+        brightness_temperature_37H:gsx_field_of_view = "efov_37H" ;
+        brightness_temperature_37H:gsx_azimuth_angle = "earth_azimuth_angle_loc1" ;
+        brightness_temperature_37H:gsx_incidence_angle = "earth_incidence_angle_loc1" ;
+
+    float brightness_temperature_37V(scans_loc1, measurements_loc1) ;
+        brightness_temperature_37V:standard_name = "brightness_temperature" ;
+        brightness_temperature_37V:long_name = "$tb_fcdr_prefix FCDR of 36.5 GHz vertically polarized brightness temperature" ;
+        brightness_temperature_37V:units = "kelvin" ;
+        brightness_temperature_37V:valid_range = 50.f, 350.f ;
+        brightness_temperature_37V:_FillValue = -100.f ;
+        brightness_temperature_37V:coordinates = "longitude_loc1 latitude_loc1" ;
+        brightness_temperature_37V:gsx_field_of_view = "efov_37V" ;
+        brightness_temperature_37V:gsx_azimuth_angle = "earth_azimuth_angle_loc1" ;
+        brightness_temperature_37V:gsx_incidence_angle = "earth_incidence_angle_loc1" ;
+
+    float brightness_temperature_89AH(scans_loc2, measurements_loc2) ;
+        brightness_temperature_89AH:standard_name = "brightness_temperature" ;
+        brightness_temperature_89AH:long_name = "$tb_fcdr_prefix FCDR of 89.0 GHz horizontally polarized brightness temperature A" ;
+        brightness_temperature_89AH:units = "kelvin" ;
+        brightness_temperature_89AH:valid_range = 50.f, 350.f ;
+        brightness_temperature_89AH:_FillValue = -100.f ;
+        brightness_temperature_89AH:coordinates = "longitude_loc2 latitude_loc2" ;
+        brightness_temperature_89AH:gsx_field_of_view = "efov_89AH" ;
+        brightness_temperature_89AH:gsx_azimuth_angle = "earth_azimuth_angle_loc2" ;
+        brightness_temperature_89AH:gsx_incidence_angle = "earth_incidence_angle_loc2" ;
+
+    float brightness_temperature_89AV(scans_loc2, measurements_loc2) ;
+        brightness_temperature_89AV:standard_name = "brightness_temperature" ;
+        brightness_temperature_89AV:long_name = "$tb_fcdr_prefix FCDR of 89.0 GHz vertically polarized brightness temperature A" ;
+        brightness_temperature_89AV:units = "kelvin" ;
+        brightness_temperature_89AV:valid_range = 50.f, 350.f ;
+        brightness_temperature_89AV:_FillValue = -100.f ;
+        brightness_temperature_89AV:coordinates = "longitude_loc2 latitude_loc2" ;
+        brightness_temperature_89AV:gsx_field_of_view = "efov_89AV" ;
+        brightness_temperature_89AV:gsx_azimuth_angle = "earth_azimuth_angle_loc2" ;
+        brightness_temperature_89AV:gsx_incidence_angle = "earth_incidence_angle_loc2" ;
+
+    float brightness_temperature_89BH(scans_loc3, measurements_loc3) ;
+        brightness_temperature_89BH:standard_name = "brightness_temperature" ;
+        brightness_temperature_89BH:long_name = "$tb_fcdr_prefix FCDR of 89.0 GHz horizontally polarized brightness temperature B" ;
+        brightness_temperature_89BH:units = "kelvin" ;
+        brightness_temperature_89BH:valid_range = 50.f, 350.f ;
+        brightness_temperature_89BH:_FillValue = -100.f ;
+        brightness_temperature_89BH:coordinates = "longitude_loc3 latitude_loc3" ;
+        brightness_temperature_89BH:gsx_field_of_view = "efov_89BH" ;
+        brightness_temperature_89BH:gsx_azimuth_angle = "earth_azimuth_angle_loc3" ;
+        brightness_temperature_89BH:gsx_incidence_angle = "earth_incidence_angle_loc3" ;
+
+    float brightness_temperature_89BV(scans_loc3, measurements_loc3) ;
+        brightness_temperature_89BV:standard_name = "brightness_temperature" ;
+        brightness_temperature_89BV:long_name = "$tb_fcdr_prefix FCDR of 89.0 GHz vertically polarized brightness temperature B" ;
+        brightness_temperature_89BV:units = "kelvin" ;
+        brightness_temperature_89BV:valid_range = 50.f, 350.f ;
+        brightness_temperature_89BV:_FillValue = -100.f ;
+        brightness_temperature_89BV:coordinates = "longitude_loc3 latitude_loc3" ;
+        brightness_temperature_89BV:gsx_field_of_view = "efov_89BV" ;
+        brightness_temperature_89BV:gsx_azimuth_angle = "earth_azimuth_angle_loc3" ;
+        brightness_temperature_89BV:gsx_incidence_angle = "earth_incidence_angle_loc3" ;
+
+    float efov_6.9H(ellipse_dimensions) ;
+        efov_6.9H:long_name = "Effective field of view ellipsoid dimensions 6.9 GHz Horizontal sensor." ;
+        efov_6.9H:units = "kilometer" ;
+        efov_6.9H:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_6.9V(ellipse_dimensions) ;
+        efov_6.9V:long_name = "Effective field of view ellipsoid dimensions 6.9 GHz Vertical sensor." ;
+        efov_6.9V:units = "kilometer" ;
+        efov_6.9V:comment = "semi-major axis, semi-minor axis" ;
+
+        float efov_10.7H(ellipse_dimensions) ;
+        efov_10.7H:long_name = "Effective field of view ellipsoid dimensions 10.65 GHz Horizontal sensor." ;
+        efov_10.7H:units = "kilometer" ;
+        efov_10.7H:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_10.7V(ellipse_dimensions) ;
+        efov_10.7V:long_name = "Effective field of view ellipsoid dimensions 10.65 GHz Vertical sensor." ;
+        efov_10.7V:units = "kilometer" ;
+        efov_10.7V:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_18H(ellipse_dimensions) ;
+        efov_18H:long_name = "Effective field of view ellipsoid dimensions 18.7 GHz Horizontal sensor." ;
+        efov_18H:units = "kilometer" ;
+        efov_18H:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_18V(ellipse_dimensions) ;
+        efov_18V:long_name = "Effective field of view ellipsoid dimensions 18.7 GHz Vertical sensor." ;
+        efov_18V:units = "kilometer" ;
+        efov_18V:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_23H(ellipse_dimensions) ;
+        efov_23H:long_name = "Effective field of view ellipsoid dimensions 23.8 GHz Horizontal sensor." ;
+        efov_23H:units = "kilometer" ;
+        efov_23H:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_23V(ellipse_dimensions) ;
+        efov_23V:long_name = "Effective field of view ellipsoid dimensions 23.8 GHz Vertical sensor." ;
+        efov_23V:units = "kilometer" ;
+        efov_23V:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_37H(ellipse_dimensions) ;
+        efov_37H:long_name = "Effective field of view ellipsoid dimensions 36.5 GHz Horizontal sensor." ;
+        efov_37H:units = "kilometer" ;
+        efov_37H:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_37V(ellipse_dimensions) ;
+        efov_37V:long_name = "Effective field of view ellipsoid dimensions 36.5 GHz Vertical sensor." ;
+        efov_37V:units = "kilometer" ;
+        efov_37V:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_89AH(ellipse_dimensions) ;
+        efov_89AH:long_name = "Effective field of view ellipsoid dimensions 89.0 GHz Horizontal A sensor." ;
+        efov_89AH:units = "kilometer" ;
+        efov_89AH:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_89AV(ellipse_dimensions) ;
+        efov_89AV:long_name = "Effective field of view ellipsoid dimensions 89.0 GHz Vertical A sensor." ;
+        efov_89AV:units = "kilometer" ;
+        efov_89AV:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_89BH(ellipse_dimensions) ;
+        efov_89BH:long_name = "Effective field of view ellipsoid dimensions 89.0 GHz Horizontal B sensor." ;
+        efov_89BH:units = "kilometer" ;
+        efov_89BH:comment = "semi-major axis, semi-minor axis" ;
+
+    float efov_89BV(ellipse_dimensions) ;
+        efov_89BV:long_name = "Effective field of view ellipsoid dimensions 89.0 GHz Vertical B sensor." ;
+        efov_89BV:units = "kilometer" ;
+        efov_89BV:comment = "semi-major axis, semi-minor axis" ;
+
+// global attributes:
+
+    :Conventions = "CF-1.6" ;
+    :creator_email = "nsidc@nsidc.org" ;
+    :creator_url = "http://www.nsidc.org/" ;
+    :gsx_repository = "https://bitbucket.org/nsidc/gsx.git" ;
+    :gsx_variables = "brightness_temperature_6.9H, brightness_temperature_6.9V, brightness_temperature_10.7H, brightness_temperature_10.7V, brightness_temperature_18H, brightness_temperature_18V, brightness_temperature_23H, brightness_temperature_23V, brightness_temperature_37H, brightness_temperature_37V, brightness_temperature_89AH, brightness_temperature_89AV, brightness_temperature_89BH, brightness_temperature_89BV" ;
+    :institution = "National Snow and Ice Data Center" ;
+    :standard_name_vocabulary = "CF Standard Name Table (v27, 28 November 2013)" ;
+}

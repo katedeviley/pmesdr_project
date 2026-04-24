@@ -38,6 +38,7 @@ COMBINED_DIR="$GSX_DIR/gsx_combined"
 META_DIR="$OUTPUT_DIR/meta"
 SETUP_DIR="$OUTPUT_DIR/setup"
 
+rm -rf "$OUTPUT_DIR"
 mkdir -p "$GSX_DIR_1C" "$GSX_DIR_1B" "$COMBINED_DIR" "$META_DIR" "$SETUP_DIR"
 
 START_DATE=$(date -d "$DATE" +%j)

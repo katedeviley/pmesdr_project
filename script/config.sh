@@ -63,4 +63,4 @@ export PRIVATE_KEY_PATH="${MY_PRIVATE_KEY_PATH}"  # change to your path
 export REF_DIR="${BASE_DIR}/script/ref"
 
 # ============================= OUTPUT DIRECTORY ==============================
-export FINAL_OUTPUT_DIR="${FINAL_OUTPUT_DIR}" # change to your final output dir
+export FINAL_OUTPUT_DIR="${MY_FINAL_OUTPUT_DIR}" # change to your final output dir
