@@ -1,7 +1,8 @@
 #!/bin/bash
 # =============================================================================
 # Script: post_data.sh
-# Upload GeoTIFF files to SSEC FTP
+# Description: Upload GeoTIFF files to SSEC FTP
+# Usage: ./post_data.sh YYYYMMDDHH
 # =============================================================================
 set -e # Exit on error
 source ./config.sh
@@ -30,6 +31,6 @@ OUTPUT_DIR="$DATA_DIR/$DATE/S$START_HOUR/output/geotiff"
 for f in "$OUTPUT_DIR"/*.tif; do
     echo "Uploading $f"
     curl -T "$f" \
-        "ftp://ftp.ssec.wisc.edu/pub/GCOMW1_AMSR2/" \
-        --user anonymous:kdeviley@ssec.wisc.edu
+        "${SSEC_URL}" \
+        --user anonymous:"${SSEC_USERNAME}"
 done

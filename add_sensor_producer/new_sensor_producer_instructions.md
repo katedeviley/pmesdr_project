@@ -1,5 +1,5 @@
 # Instructions for Adding New Sensor/Producer to Pmesdr
-
+## Steps 1-6 Have Already Been Done for AMSR3
 ### 1. In _pmesdr/src/prod/gsx/src/_
 #### Open `gsx.h`:
    1. Near the other `gsx_<sensor>_channel_name[]` declarations, add a new `static const char * array` for your sensor:
@@ -161,14 +161,14 @@ if ( CETB_MY_PROVIDER == producer_id ) {
   }
 }
 ```
-## Next Steps are Specific to your **Python Library**
+## Steps 7-9 are Specific to your **Environment**
 ### 7. In your python lib _site-packages/gsx/_
 #### Open `cli.py`:
    1. Add new sensor to `SOURCE_TYPES`
 
 ### 8. In your python lib _site-packages/gsx/strategies_
 #### Create Transformer Strategy file for new sensor:
-   - Transformer stragegy file for amsr3.py can be found at _/add_sensor_producer/amsr3.py_
+   - Transformer stragegy file for AMSR3 can be found at _/add_sensor_producer/amsr3.py_
 #### Open `__init__.py`:
    1. Add new source type import.
 
@@ -183,4 +183,4 @@ from .amsr3 import AMSR3_TS # noqa
 
 ### 9. In your python lib _site-packages/gsx/ancillary/_
 #### Create cdl.template file for new sensor:
-   - Template file for can be found at _/add_sensor_producer/gsx_amsr3.cdl.template_
+   - Template file for AMSR3 can be found at _/add_sensor_producer/gsx_amsr3.cdl.template_

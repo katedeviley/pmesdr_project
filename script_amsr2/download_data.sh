@@ -1,10 +1,8 @@
 #!/bin/bash
 # =============================================================================
-# Script: process_amsr2_data.sh
-# Description: Downloads AMSR2 1C (NASA) and 1B (JAXA) data for a given
-#              6-hour window. Defaults to the last full quarter day if no
-#              date argument is provided.
-# Usage: ./process_amsr2_data.sh [YYYYMMDDHH]
+# Script: download_data.sh
+# Description: Downloads AMSR2 1C (NASA) and 1B (JAXA) data for a given time.
+# Usage: ./download_data.sh [YYYYMMDDHH]
 # =============================================================================
 set -e # Exit on error
 source ./config.sh
@@ -100,7 +98,7 @@ else
     -i "$PRIVATE_KEY_PATH" \
     -oPort=2051 \
     "$GPORTAL_USERNAME"@ftp.gportal.jaxa.jp <<EOF
-cd /nrt/GCOM-W/GCOM-W.AMSR2/L1B/global
+cd "$GPORTAL_DATA_PATH"
 mget GW1AM2_${DATE}*.h5
 $( [ "$START_HOUR" -gt 16 ] && echo "mget GW1AM2_${YESTERDAY}*.h5" )
 bye

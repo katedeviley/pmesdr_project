@@ -54,7 +54,7 @@ endif
 # Core pipeline (NO POST)
 # ----------------------------
 
-all: download process geotiff collect #clean
+all: download process geotiff collect clean
 
 download:
 	@echo "Downloading AMSR2 data for $(DATEHOUR)..."

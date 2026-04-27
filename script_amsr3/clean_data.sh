@@ -1,7 +1,9 @@
 #!/bin/bash
 # =============================================================================
 # Script: clean_data.sh
-# Description: Cleans up intermediate files from the processing pipeline for a given date and hour. This is typically called by the Makefile after processing is complete.
+# Description: Cleans up intermediate files from the processing pipeline for a 
+#              given date and hour. This is typically called by the Makefile
+#              after processing is complete.
 # Usage: ./clean_data.sh [YYYYMMDDHH]
 # =============================================================================
 set -e # Exit on error
@@ -25,4 +27,4 @@ fi
 rm -rf $DATA_DIR/$DATE/S$START_HOUR/output/gsx \
 	$DATA_DIR/$DATE/S$START_HOUR/output/meta \
 	$DATA_DIR/$DATE/S$START_HOUR/output/setup \
-  $DATA_DIR/$DATE/S$START_HOUR/input \
+  # $DATA_DIR/$DATE/S$START_HOUR/input \

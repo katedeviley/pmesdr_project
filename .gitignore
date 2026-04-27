@@ -1,6 +1,6 @@
 data/
+data_amsr2/
 data_amsr3/
 nohup.out
-script_amsr3/
 my_config.sh
-L1R/
+test_gdal.sh

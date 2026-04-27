@@ -1,10 +1,10 @@
 #!/bin/bash
 # =============================================================================
-# PMESDR / AMSR2 Processing Pipeline Configuration
+# PMESDR / AMSR3 Processing Pipeline Configuration
 # =============================================================================
-# Central configuration file for the AMSR2 processing pipeline.
+# Central configuration file for the AMSR3 processing pipeline.
 # Defines environment variables used across:
-#     - download scripts (NASA PPS + JAXA G-Portal)
+#     - download scripts (JAXA G-Portal)
 #     - GSX conversion step
 #     - PMESDR gridding pipeline (meas_meta tools)
 #     - Makefile execution workflow
@@ -15,7 +15,9 @@
 #     source ./config.sh
 #
 # =============================================================================
-source ../my_config.sh
+if [ -f "../my_config.sh" ]; then
+  source ../my_config.sh
+fi
 
 # ============================= CONDA ENVIRONMENT =============================
 export CONDA_ENV="pmesdrEnv"
@@ -28,7 +30,7 @@ export CONDA_SH="${HOME}/miniconda3/etc/profile.d/conda.sh"
 #   /BASE_DIR/
 #       ├── DATA_DIR/
 #       ├── PMESDR_TOP_DIR/
-#       └── script/
+#       └── script_amsr3/
 export BASE_DIR="${HOME}/pmesdr_project"
 
 # DATA_DIR:
@@ -38,7 +40,7 @@ export BASE_DIR="${HOME}/pmesdr_project"
 #       └── SHH/
 #           ├── input/  
 #           └── output/
-export DATA_DIR="${BASE_DIR}/data"
+export DATA_DIR="${BASE_DIR}/data_amsr3"
 
 # PMESDR_TOP_DIR:
 #   Root directory of PMESDR source code
@@ -51,16 +53,17 @@ export MEAS_META_SETUP="${PMESDR_TOP_DIR}/src/prod/meas_meta_setup/meas_meta_set
 export MEAS_META_SIR="${PMESDR_TOP_DIR}/src/prod/meas_meta_sir/meas_meta_sir"
 
 # =============================== DATA SOURCES ================================
-# NASA PPS:
-export PPS_URL="ftp://jsimpsonftps.pps.eosdis.nasa.gov/data/1C/AMSR2/"
-export PPS_USERNAME="${MY_PPS_USERNAME}" # change to your username
-
 # JAXA G-Portal:
-export GPORTAL_USERNAME="${MY_GPORTAL_USERNAME}"  # change to your username
-export PRIVATE_KEY_PATH="${MY_PRIVATE_KEY_PATH}"  # change to your path
+export GPORTAL_DATA_PATH="/nrt/GOSAT-GW/GOSAT-GW.AMSR3/L1B/global"
+export GPORTAL_USERNAME="${MY_GPORTAL_USERNAME}"
+export PRIVATE_KEY_PATH="${MY_PRIVATE_KEY_PATH}"
+
+# SSEC:  (for posting data)
+export SSEC_URL="ftp://ftp.ssec.wisc.edu/pub/GOSATGW_AMSR3/"
+export SSEC_USERNAME="${MY_SSEC_USERNAME}" 
 
 # ============================== REFERENCE FILES ==============================
-export REF_DIR="${BASE_DIR}/script/ref"
+export REF_DIR="${BASE_DIR}/script_amsr3/ref"
 
 # ============================= OUTPUT DIRECTORY ==============================
-export FINAL_OUTPUT_DIR="${MY_FINAL_OUTPUT_DIR}" # change to your final output dir
+export FINAL_OUTPUT_DIR="${MY_FINAL_OUTPUT_DIR}"
