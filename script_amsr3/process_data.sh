@@ -41,21 +41,40 @@ START_DATE=$(date -d "$DATE" +%j)
 YEAR=$(date -d "$DATE" +%Y)
 
 GROUP_NAMES=(
-  "N"
-  "S"
+  "N_6_10GHz"
+  "N_18GHz"
+  "N_23GHz"
+  "N_36GHz"
+  "N_89GHz"
+  "S_6_10GHz"
+  "S_18GHz"
+  "S_23GHz"
+  "S_36GHz"
+  "S_89GHz"
 )
 
 REGION_FILES=(
-  "${REF_DIR}/E2N_amsr3.def"
-  "${REF_DIR}/E2S_amsr3.def"
+  "${REF_DIR}/E2N_AMSR_6_10GHz.def"
+  "${REF_DIR}/E2N_AMSR_18GHz.def"
+  "${REF_DIR}/E2N_AMSR_23GHz.def"
+  "${REF_DIR}/E2N_AMSR_36GHz.def"
+  "${REF_DIR}/E2N_AMSR_89GHz.def"
+
+  "${REF_DIR}/E2S_AMSR_6_10GHz.def"
+  "${REF_DIR}/E2S_AMSR_18GHz.def"
+  "${REF_DIR}/E2S_AMSR_23GHz.def"
+  "${REF_DIR}/E2S_AMSR_36GHz.def"
+  "${REF_DIR}/E2S_AMSR_89GHz.def"
 ) # adjust region if needed
 
 THRESHOLDS=(
-  -8 -8
+  -8 -8 -8 -8 -16
+  -8 -8 -8 -8 -16
 )
 
 BOX_SIZES=(
-  250 250
+  250 137.5 162.5 75 62.5
+  250 137.5 162.5 75 62.5
 )
 
 # ----------------------------

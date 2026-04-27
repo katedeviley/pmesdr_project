@@ -1,4 +1,4 @@
-# AMSR2/AMSR3 Processing Pipeline
+# AMSR2 Processing Pipeline
 
 ## Submodules
 
@@ -138,3 +138,17 @@ Example cron entry:
 # Run pipeline at 2,8,14,20
 0 2,8,14,20 * * * cd /path/to/project && make full >> logs/pipeline.log 2>&1
 ```
+
+# Adding AMSR3
+
+If you are adding a new sensor or data producer (e.g., AMSR3, GCOM-W2, or any future microwave instrument), follow the instructions in:
+
+    add_sensor_producer/new_sensor_producer_instructions.md
+
+### AMSR3 Integration Note 
+
+For AMSR3, if this repository was cloned from:
+
+    https://github.com/katedeviley/pmesdr
+
+then **skip Steps 1–6** in the sensor integration guide and begin at Step 7. These steps are already implemented in the base PMESDR framework.

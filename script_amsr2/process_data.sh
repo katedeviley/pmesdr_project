@@ -58,17 +58,17 @@ GROUP_NAMES=(
 )
 
 REGION_FILES=(
-  "${REF_DIR}/E2N_AMSR2_6_10GHz.def"
-  "${REF_DIR}/E2N_AMSR2_18GHz.def"
-  "${REF_DIR}/E2N_AMSR2_23GHz.def"
-  "${REF_DIR}/E2N_AMSR2_36GHz.def"
-  "${REF_DIR}/E2N_AMSR2_89GHz.def"
+  "${REF_DIR}/E2N_AMSR_6_10GHz.def"
+  "${REF_DIR}/E2N_AMSR_18GHz.def"
+  "${REF_DIR}/E2N_AMSR_23GHz.def"
+  "${REF_DIR}/E2N_AMSR_36GHz.def"
+  "${REF_DIR}/E2N_AMSR_89GHz.def"
 
-  "${REF_DIR}/E2S_AMSR2_6_10GHz.def"
-  "${REF_DIR}/E2S_AMSR2_18GHz.def"
-  "${REF_DIR}/E2S_AMSR2_23GHz.def"
-  "${REF_DIR}/E2S_AMSR2_36GHz.def"
-  "${REF_DIR}/E2S_AMSR2_89GHz.def"
+  "${REF_DIR}/E2S_AMSR_6_10GHz.def"
+  "${REF_DIR}/E2S_AMSR_18GHz.def"
+  "${REF_DIR}/E2S_AMSR_23GHz.def"
+  "${REF_DIR}/E2S_AMSR_36GHz.def"
+  "${REF_DIR}/E2S_AMSR_89GHz.def"
 ) # adjust region if needed
 
 THRESHOLDS=(

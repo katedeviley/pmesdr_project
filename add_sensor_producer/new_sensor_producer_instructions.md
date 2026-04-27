@@ -103,8 +103,15 @@ else if ( CETB_AMSR3 == id ) {
         break;
       ...
 ```
+   3. Around line _2845_, add platform to `cetb_ltod_split_times`
 
-   3. **IMPORTANT:** Only need next parts if 89GHz channel is split into A and B beams.
+**Example:**
+```c
+{ {-4.0, 8.0}, {-4.0, 8.0} }, /* CETB_GOSATGW platform */
+```
+   4. Complete the implementation of `ltod_split_time` for any new platform by adding its LTOD split-time behavior to both the `negative_flag` handling logic and the platform-specific `switch`/lookup table section.
+
+   5. **IMPORTANT:** Only need next parts if 89GHz channel is split into A and B beams.
    - Around line _560_, add your platform:
 
 **Example:**

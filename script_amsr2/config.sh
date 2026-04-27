@@ -32,6 +32,7 @@ export CONDA_SH="${HOME}/miniconda3/etc/profile.d/conda.sh"
 #       ├── PMESDR_TOP_DIR/
 #       └── script_amsr2/
 export BASE_DIR="${HOME}/pmesdr_project"
+export SCRIPT_DIR="${BASE_DIR}/script_amsr2"
 
 # DATA_DIR:
 #   Root directory for all data products (input/output)
@@ -67,7 +68,7 @@ export SSEC_URL="ftp://ftp.ssec.wisc.edu/pub/GCOMW1_AMSR2/"
 export SSEC_USERNAME="${MY_SSEC_USERNAME}" 
 
 # ============================== REFERENCE FILES ==============================
-export REF_DIR="${BASE_DIR}/script/ref"
+export REF_DIR="${BASE_DIR}/ref"
 
 # ============================= OUTPUT DIRECTORY ==============================
 export FINAL_OUTPUT_DIR="${MY_FINAL_OUTPUT_DIR}" # change to your final output dir
