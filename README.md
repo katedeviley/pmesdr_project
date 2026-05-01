@@ -4,9 +4,24 @@
 
 This project is built on the `pmesdr` library:
 
-- Original repo: https://github.com/nsidc/pmesdr
+- Original repo: [nsidc/pmesdr](https://github.com/nsidc/pmesdr)
 
-- Fork used here: https://github.com/katedeviley/pmesdr
+- Fork used here: [katedeviley/pmesdr](https://github.com/katedeviley/pmesdr)
+
+## Installation 
+
+Install the pipeline by cloning the repo. To ensure all dependencies are downloaded in one step, use the --recurse-submodules flag:
+
+``` bash
+git clone --recurse-submodules https://github.com/katedeviley/pmesdr_project.git
+```
+
+If you previously cloned without the recursive flag, or if the pmesdr folder appears empty, run:
+```bash
+git submodule update --init --recursive
+```
+
+Once the submodules are initialized, follow the specific build and environment instructions found in the installation section of [pmesdr/README.md](./pmesdr/README.md).
 
 ## Data Directory Structure
 
@@ -35,7 +50,7 @@ Example:
     - previous day (`YESTERDAY`) when needed
 - Data is organized into 6-hour slots
 
-### 1. Data Acquisition
+### 2. Data Acquisition
 
 For each time window, the pipeline downloads:
 - Level 1B (JAXA G-Portal)
@@ -53,7 +68,7 @@ Organizes inputs into:
     input/1B
     input/1C
 
-### 2. Processing (PMESDR-based)
+### 3. Processing (PMESDR-based)
 
 Using the PMESDR framework:
 - Geolocation correction
@@ -61,7 +76,7 @@ Using the PMESDR framework:
 - Orbit stitching and alignment
 - Time filtering within the selected window
 
-### 3. Output Generation
+### 4. Output Generation
 
 Final products are written to:
 
@@ -72,7 +87,7 @@ Includes:
 - Derived geophysical fields
 - GeoTIFF conversion (via make_geotiff.sh)
 
-### 4. Post-Processing
+### 5. Post-Processing
 
 - Final processed products are moved to a designated final output directory for storage.
 - Intermediate processing files (temporary NetCDF, staging files, and raw intermediates) are removed after processing.
@@ -108,25 +123,10 @@ If no `DATEHOUR` is provided, the Makefile automatically selects:
 
 ### Run Individual Steps
 
-Download data:
-
-    make download DATEHOUR=YYYYMMDDHH
-
-Process data:
-
-    make process DATEHOUR=YYYYMMDDHH
-
-Generate GeoTIFF outputs:
-
-    make geotiff DATEHOUR=YYYYMMDDHH
-
-Collect outputs:
-
-    make collect DATEHOUR=YYYYMMDDHH
-
-Post to SSEC:
-
-    make post DATEHOUR=YYYYMMDDHH
+- Download: `make download DATEHOUR=YYYYMMDDHH`
+- Process: `make process DATEHOUR=YYYYMMDDHH`
+- GeoTIFF: `make geotiff DATEHOUR=YYYYMMDDHH`
+- Cleanup: `make clean DATEHOUR=YYYYMMDDHH`
 
 ## Automation
 
@@ -141,14 +141,9 @@ Example cron entry:
 
 # Adding AMSR3
 
-If you are adding a new sensor or data producer (e.g., AMSR3, GCOM-W2, or any future microwave instrument), follow the instructions in:
-
-    add_sensor_producer/new_sensor_producer_instructions.md
+To add a new sensor or data producer (e.g., GCOM-W2 or future microwave instruments), follow the detailed guide in:
+[add_sensor_producer/new_sensor_producer_instructions.md](./add_sensor_producer/new_sensor_producer_instructions.md)
 
 ### AMSR3 Integration Note 
 
-For AMSR3, if this repository was cloned from:
-
-    https://github.com/katedeviley/pmesdr
-
-then **skip Steps 1–6** in the sensor integration guide and begin at Step 7. These steps are already implemented in the base PMESDR framework.
+If you are using the `katedeviley/pmesdr` fork, **skip Steps 1–6** of the integration guide. The core channel mapping and 89 GHz combination logic are already implemented in this framework; you can begin at **Step 7**.

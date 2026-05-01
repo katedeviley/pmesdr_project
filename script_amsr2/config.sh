@@ -28,11 +28,19 @@ export CONDA_SH="${HOME}/miniconda3/etc/profile.d/conda.sh"
 #   Root directory 
 #   Example structure:
 #   /BASE_DIR/
-#       ├── DATA_DIR/
 #       ├── PMESDR_TOP_DIR/
+#       ├── REF_DIR/
+#       ├── DATA_DIR/
 #       └── script_amsr2/
 export BASE_DIR="${HOME}/pmesdr_project"
-export SCRIPT_DIR="${BASE_DIR}/script_amsr2"
+
+# PMESDR_TOP_DIR:
+#   Root directory of PMESDR source code
+export PMESDR_TOP_DIR="${BASE_DIR}/pmesdr"
+
+# REF_DIR:
+#   Directory of Region definition files
+export REF_DIR="${BASE_DIR}/ref"
 
 # DATA_DIR:
 #   Root directory for all data products (input/output)
@@ -43,9 +51,11 @@ export SCRIPT_DIR="${BASE_DIR}/script_amsr2"
 #           └── output/
 export DATA_DIR="${BASE_DIR}/data_amsr2"
 
-# PMESDR_TOP_DIR:
-#   Root directory of PMESDR source code
-export PMESDR_TOP_DIR="${BASE_DIR}/pmesdr"
+# SCRIPT_DIR:
+export SCRIPT_DIR="${BASE_DIR}/script_amsr2"
+
+# ============================= OUTPUT DIRECTORY ==============================
+export FINAL_OUTPUT_DIR="${MY_FINAL_OUTPUT_DIR}"  # change to your final output dir
 
 # ============================= EXECUTABLE PATHS ==============================
 export GSX="${HOME}/miniconda3/envs/${CONDA_ENV}/bin/gsx"
@@ -56,19 +66,13 @@ export MEAS_META_SIR="${PMESDR_TOP_DIR}/src/prod/meas_meta_sir/meas_meta_sir"
 # =============================== DATA SOURCES ================================
 # NASA PPS:
 export PPS_URL="ftp://jsimpsonftps.pps.eosdis.nasa.gov/data/1C/AMSR2/"
-export PPS_USERNAME="${MY_PPS_USERNAME}" # change to your username
+export PPS_USERNAME="${MY_PPS_USERNAME}"          # change to your username
 
 # JAXA G-Portal:
 export GPORTAL_DATA_PATH="/nrt/GCOM-W/GCOM-W.AMSR2/L1B/global"
 export GPORTAL_USERNAME="${MY_GPORTAL_USERNAME}"  # change to your username
-export PRIVATE_KEY_PATH="${MY_PRIVATE_KEY_PATH}"  # change to your path
+export PRIVATE_KEY_PATH="${MY_PRIVATE_KEY_PATH}"  # change to your key path
 
 # SSEC: (for posting data)
 export SSEC_URL="ftp://ftp.ssec.wisc.edu/pub/GCOMW1_AMSR2/"
-export SSEC_USERNAME="${MY_SSEC_USERNAME}" 
-
-# ============================== REFERENCE FILES ==============================
-export REF_DIR="${BASE_DIR}/ref"
-
-# ============================= OUTPUT DIRECTORY ==============================
-export FINAL_OUTPUT_DIR="${MY_FINAL_OUTPUT_DIR}" # change to your final output dir
+export SSEC_USERNAME="${MY_SSEC_USERNAME}"        # change to your username

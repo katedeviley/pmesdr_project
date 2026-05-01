@@ -37,7 +37,7 @@ module load gcc/11.2 hdf/4.2.15 hdf5/1.12.2 netcdf4/4.8.1 gdal/3.12.1
 
 MAX_ATTEMPTS=3
 
-for ncfile in "$OUTPUT_DIR"/*_SIR_*3.125km*.nc; do
+for ncfile in "$OUTPUT_DIR"/*.nc; do
     [ -e "$ncfile" ] || continue
     tiffile="$OUTPUT_DIR/$(basename "${ncfile%.nc}.tif")"
     echo "Converting $(basename "$ncfile") → $(basename "$tiffile")"
